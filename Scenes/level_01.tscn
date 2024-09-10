@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cm7x6tv4dnan"]
+[gd_scene load_steps=15 format=4 uid="uid://cm7x6tv4dnan"]
 
 [ext_resource type="TileSet" uid="uid://dvkm0u4j7xysj" path="res://tile_set.tres" id="1_iwit0"]
 [ext_resource type="PackedScene" uid="uid://ekgjtx67pvel" path="res://Scenes/platform.tscn" id="2_li1fq"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bf5wvkrwp6mku" path="res://Scenes/coin.tscn" id="4_m4myn"]
 [ext_resource type="PackedScene" uid="uid://bjrtuqmx0fxuk" path="res://Scenes/dead_zone.tscn" id="5_512bw"]
 [ext_resource type="PackedScene" uid="uid://d3p7r31l26m5k" path="res://Scenes/enemy.tscn" id="6_hcf2r"]
+[ext_resource type="FontFile" uid="uid://bwj8cb50v5gfb" path="res://Assets/fonts/PixelOperator8.ttf" id="7_x5ykx"]
 
 [sub_resource type="Animation" id="Animation_6mceb"]
 resource_name = "PlatformMovement"
@@ -185,3 +186,28 @@ position = Vector2(743, 46)
 
 [node name="Enemy2" parent="." instance=ExtResource("6_hcf2r")]
 position = Vector2(58, 31)
+
+[node name="Labels" type="Node2D" parent="."]
+
+[node name="JumpLabel" type="Label" parent="Labels"]
+offset_left = -33.0
+offset_top = -57.0
+offset_right = 78.0
+offset_bottom = -34.0
+theme_override_colors/font_shadow_color = Color(0.0117647, 0.14902, 0.34902, 1)
+theme_override_fonts/font = ExtResource("7_x5ykx")
+theme_override_font_sizes/font_size = 8
+text = "Usa Espacio, 
+X o A para saltar"
+
+[node name="MoveLabel" type="Label" parent="Labels"]
+offset_left = -112.0
+offset_top = -8.0
+offset_right = 11.0
+offset_bottom = 22.0
+theme_override_colors/font_shadow_color = Color(0.0980392, 0.313726, 0.752941, 1)
+theme_override_fonts/font = ExtResource("7_x5ykx")
+theme_override_font_sizes/font_size = 8
+text = "Usa las flechas
+izquierda y derecha
+para moverte"
