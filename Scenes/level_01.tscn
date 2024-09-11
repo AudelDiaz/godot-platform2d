@@ -97,7 +97,7 @@ tile_map_data = PackedByteArray("AAD8//v/AAAAAA0AAAD8//z/AAAAAA0AAAD8//3/AAAAAA0
 tile_set = ExtResource("1_iwit0")
 
 [node name="ElementsLayer" type="TileMapLayer" parent="Layers"]
-tile_map_data = PackedByteArray("AAAJAPr/AAAAAAMAAAAJAPv/AAAAAAQAAAAJAPz/AAAAAAUAAAARAPv/AAAFAAMAAAARAPz/AAAFAAQAAAARAP3/AAAFAAUAAAASAP3/AAAIAAYAAAAWAP//AAAHAAYAAAAeAP//AAAIAAMAAAANAAEAAAAHAAcAAAD//wEAAAAGAAYAAAA=")
+tile_map_data = PackedByteArray("AAAJAPr/AAAAAAMAAAAJAPv/AAAAAAQAAAAJAPz/AAAAAAUAAAARAPv/AAAFAAMAAAARAPz/AAAFAAQAAAARAP3/AAAFAAUAAAASAP3/AAAIAAYAAAAWAP//AAAHAAYAAAAeAP//AAAIAAMAAAANAAEAAAAHAAcAAAD//wEAAAAGAAYAAAAtAPf/AAAEAAgAAAA=")
 tile_set = ExtResource("1_iwit0")
 
 [node name="PlatformsLayer" type="TileMapLayer" parent="Layers"]
@@ -164,7 +164,7 @@ position = Vector2(999, -59)
 position = Vector2(823, -123)
 
 [node name="Coin11" parent="Coins" instance=ExtResource("4_m4myn")]
-position = Vector2(727, -139)
+position = Vector2(791, -139)
 
 [node name="Coin6" parent="Coins" instance=ExtResource("4_m4myn")]
 position = Vector2(419, -37)
@@ -199,6 +199,18 @@ theme_override_fonts/font = ExtResource("7_x5ykx")
 theme_override_font_sizes/font_size = 8
 text = "Usa Espacio, 
 X o A para saltar"
+
+[node name="EndScore" type="Label" parent="Labels"]
+unique_name_in_owner = true
+offset_left = 785.0
+offset_top = -173.0
+offset_right = 896.0
+offset_bottom = -150.0
+theme_override_colors/font_shadow_color = Color(0.0117647, 0.14902, 0.34902, 1)
+theme_override_fonts/font = ExtResource("7_x5ykx")
+theme_override_font_sizes/font_size = 8
+text = "Recolecta todas 
+las monedas"
 
 [node name="MoveLabel" type="Label" parent="Labels"]
 offset_left = -112.0
