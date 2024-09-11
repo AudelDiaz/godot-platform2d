@@ -181,12 +181,6 @@ position = Vector2(33, 111)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
 shape = SubResource("WorldBoundaryShape2D_n6py2")
 
-[node name="Enemy" parent="." instance=ExtResource("6_hcf2r")]
-position = Vector2(743, 46)
-
-[node name="Enemy2" parent="." instance=ExtResource("6_hcf2r")]
-position = Vector2(58, 31)
-
 [node name="Labels" type="Node2D" parent="."]
 
 [node name="JumpLabel" type="Label" parent="Labels"]
@@ -223,3 +217,11 @@ theme_override_font_sizes/font_size = 8
 text = "Usa las flechas
 izquierda y derecha
 para moverte"
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("6_hcf2r")]
+position = Vector2(743, 46)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("6_hcf2r")]
+position = Vector2(58, 31)
