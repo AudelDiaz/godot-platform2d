@@ -35,7 +35,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_0v8qw")
 theme_override_font_sizes/font_size = 32
-text = "Main Menu"
+text = "MAIN MENU"
 
 [connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]

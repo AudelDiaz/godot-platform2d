@@ -14,7 +14,7 @@ func _on_body_entered(_body: Node2D) -> void:
 	if Global.get_score() < TOTAL_COINS:
 		end_score.text = "Recolecta todas las monedas \n" + str(Global.get_score()) + " de " + str(TOTAL_COINS) + "."
 	else:
-		end_score.text = "Felicitaciones!! \nhas recolectado todas las monedas."
+		end_score.text = "Felicitaciones!! \nhas recolectado \ntodas las monedas."
 	
 
 
