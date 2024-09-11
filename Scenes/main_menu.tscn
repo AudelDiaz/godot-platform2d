@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnrhe1krq5vtj"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_8m53b"]
+[ext_resource type="Texture2D" uid="uid://di0p5y3r1idrd" path="res://Assets/Mountain-Dusk.png" id="1_iwlva"]
+[ext_resource type="FontFile" uid="uid://b24rw881o2sbv" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="1_u634u"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8m53b")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_iwlva")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.457
+anchor_right = 0.5
+anchor_bottom = 0.457
+offset_left = -432.0
+offset_top = -8.13602
+offset_right = 432.0
+offset_bottom = 314.864
+theme_override_constants/separation = 64
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.984314, 0.839216, 0.65098, 1)
+theme_override_colors/font_shadow_color = Color(0.172549, 0.145098, 0.27451, 1)
+theme_override_fonts/font = ExtResource("1_u634u")
+theme_override_font_sizes/font_size = 48
+text = "Platform 2D Tutorial
+By @AudelDiaz"
+horizontal_alignment = 1
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.984314, 0.662745, 0.584314, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_u634u")
+theme_override_font_sizes/font_size = 40
+text = "PLAY"
+flat = true
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.878431, 0.282353, 0.231373, 1)
+theme_override_fonts/font = ExtResource("1_u634u")
+theme_override_font_sizes/font_size = 40
+text = "EXIT"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
