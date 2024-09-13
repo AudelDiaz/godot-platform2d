@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cm7x6tv4dnan"]
+[gd_scene load_steps=17 format=4 uid="uid://cm7x6tv4dnan"]
 
 [ext_resource type="TileSet" uid="uid://dvkm0u4j7xysj" path="res://tile_set.tres" id="1_iwit0"]
 [ext_resource type="PackedScene" uid="uid://ekgjtx67pvel" path="res://Scenes/platform.tscn" id="2_li1fq"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d3p7r31l26m5k" path="res://Scenes/enemy.tscn" id="6_hcf2r"]
 [ext_resource type="FontFile" uid="uid://bwj8cb50v5gfb" path="res://Assets/fonts/PixelOperator8.ttf" id="7_x5ykx"]
 [ext_resource type="PackedScene" uid="uid://ddvcm6fgtmjvp" path="res://Scenes/pause_menu.tscn" id="8_dlr5k"]
+[ext_resource type="PackedScene" uid="uid://dfj68x0piwjxv" path="res://Scenes/touch_controls.tscn" id="9_fqb6s"]
 
 [sub_resource type="Animation" id="Animation_6mceb"]
 resource_name = "PlatformMovement"
@@ -229,3 +230,5 @@ position = Vector2(743, 46)
 position = Vector2(58, 31)
 
 [node name="PauseMenu" parent="." instance=ExtResource("8_dlr5k")]
+
+[node name="TouchControls" parent="." instance=ExtResource("9_fqb6s")]
