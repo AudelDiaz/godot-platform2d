@@ -1,38 +1,51 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfj68x0piwjxv"]
+[gd_scene load_steps=6 format=3 uid="uid://dfj68x0piwjxv"]
 
 [ext_resource type="Script" path="res://Scripts/touch_controls.gd" id="1_3to5g"]
 [ext_resource type="Texture2D" uid="uid://ofl2fb71fo4q" path="res://Assets/controls/left.png" id="1_nnjgu"]
 [ext_resource type="Texture2D" uid="uid://bgnr1os80np4h" path="res://Assets/controls/right.png" id="2_7t7ii"]
 [ext_resource type="Texture2D" uid="uid://14kuyfunyayv" path="res://Assets/controls/jump.png" id="3_xtt5f"]
+[ext_resource type="Texture2D" uid="uid://cjkye77u2716e" path="res://Assets/controls/pause.png" id="5_xscqb"]
 
 [node name="TouchControls" type="Control"]
+clip_contents = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 3
 script = ExtResource("1_3to5g")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="LeftButton" type="TouchScreenButton" parent="CanvasLayer"]
-position = Vector2(31, 562)
+position = Vector2(31, 570)
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("1_nnjgu")
 action = "move_left"
+visibility_mode = 1
 
 [node name="RightButton" type="TouchScreenButton" parent="CanvasLayer"]
-position = Vector2(190, 562)
+position = Vector2(190, 570)
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("2_7t7ii")
 action = "move_right"
+visibility_mode = 1
 
 [node name="JumpButton" type="TouchScreenButton" parent="CanvasLayer"]
-position = Vector2(1123, 562)
+position = Vector2(1123, 570)
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("3_xtt5f")
 action = "jump"
+visibility_mode = 1
+
+[node name="PauseButton" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(645, 580)
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("5_xscqb")
+action = "pause"
+visibility_mode = 1
 
 [connection signal="pressed" from="CanvasLayer/LeftButton" to="." method="_on_left_button_pressed"]
 [connection signal="released" from="CanvasLayer/LeftButton" to="." method="_on_left_button_released"]
@@ -40,3 +53,5 @@ action = "jump"
 [connection signal="released" from="CanvasLayer/RightButton" to="." method="_on_right_button_released"]
 [connection signal="pressed" from="CanvasLayer/JumpButton" to="." method="_on_jump_button_pressed"]
 [connection signal="released" from="CanvasLayer/JumpButton" to="." method="_on_jump_button_released"]
+[connection signal="pressed" from="CanvasLayer/PauseButton" to="." method="_on_jump_button_pressed"]
+[connection signal="released" from="CanvasLayer/PauseButton" to="." method="_on_jump_button_released"]
