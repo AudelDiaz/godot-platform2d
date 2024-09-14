@@ -227,7 +227,7 @@ para moverte"
 position = Vector2(743, 46)
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("6_hcf2r")]
-position = Vector2(58, 31)
+position = Vector2(140, -50)
 
 [node name="PauseMenu" parent="." instance=ExtResource("8_dlr5k")]
 
