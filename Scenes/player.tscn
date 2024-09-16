@@ -1,8 +1,9 @@
-[gd_scene load_steps=32 format=3 uid="uid://d3g8fnv8lupc0"]
+[gd_scene load_steps=33 format=3 uid="uid://d3g8fnv8lupc0"]
 
 [ext_resource type="Texture2D" uid="uid://besaq8umhu1h7" path="res://Assets/sprites/knight.png" id="1_ee2in"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_xh651"]
 [ext_resource type="AudioStream" uid="uid://cbma3ohs0rwn0" path="res://Assets/sounds/jump.wav" id="3_7mkkp"]
+[ext_resource type="Script" path="res://Scripts/jump.gd" id="3_j582g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_irldm"]
 atlas = ExtResource("1_ee2in")
@@ -223,6 +224,13 @@ frame_progress = 0.115368
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_sb434")
 
-[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+[node name="Jump" type="Node2D" parent="."]
+script = ExtResource("3_j582g")
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="Jump"]
 stream = ExtResource("3_7mkkp")
 bus = &"SoundFX"
+
+[node name="CoyoteTimer" type="Timer" parent="Jump"]
+
+[connection signal="timeout" from="Jump/CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
