@@ -1,11 +1,13 @@
 extends Node
 
+
+const TOTAL_COINS:int = 11
+
 var _player_score = 0
 
 
 func increase_score():
 	_player_score += 1
-	print(_player_score)
 
 func reset_score():
 	_player_score = 0

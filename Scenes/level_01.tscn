@@ -133,6 +133,12 @@ position = Vector2(878, -70)
 [node name="Platform4" parent="Platforms" instance=ExtResource("2_li1fq")]
 position = Vector2(878, -93)
 
+[node name="Platform5" parent="Platforms" instance=ExtResource("2_li1fq")]
+position = Vector2(684, -135)
+
+[node name="Platform6" parent="Platforms" instance=ExtResource("2_li1fq")]
+position = Vector2(631, -152)
+
 [node name="Player" parent="." instance=ExtResource("3_eejv5")]
 position = Vector2(23, -2)
 
@@ -168,6 +174,11 @@ position = Vector2(823, -123)
 [node name="Coin11" parent="Coins" instance=ExtResource("4_m4myn")]
 position = Vector2(791, -139)
 
+[node name="FinalCoin" parent="Coins" instance=ExtResource("4_m4myn")]
+unique_name_in_owner = true
+position = Vector2(631, -187)
+scale = Vector2(2.28903, 2.34571)
+
 [node name="Coin6" parent="Coins" instance=ExtResource("4_m4myn")]
 position = Vector2(419, -37)
 
@@ -196,18 +207,6 @@ theme_override_fonts/font = ExtResource("7_x5ykx")
 theme_override_font_sizes/font_size = 8
 text = "Usa Espacio, 
 X o A para saltar"
-
-[node name="EndScore" type="Label" parent="Labels"]
-unique_name_in_owner = true
-offset_left = 785.0
-offset_top = -173.0
-offset_right = 896.0
-offset_bottom = -150.0
-theme_override_colors/font_shadow_color = Color(0.0117647, 0.14902, 0.34902, 1)
-theme_override_fonts/font = ExtResource("7_x5ykx")
-theme_override_font_sizes/font_size = 8
-text = "Recolecta todas 
-las monedas"
 
 [node name="MoveLabel" type="Label" parent="Labels"]
 offset_left = -112.0
