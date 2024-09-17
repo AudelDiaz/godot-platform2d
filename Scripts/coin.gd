@@ -6,16 +6,19 @@ extends Area2D
 
 func _ready() -> void:
 	if self == %FinalCoin:
-		self.visible = false
+		animated_sprite.visible = false
+		collision_shape.call_deferred("set", "disabled", true)
 
 func _on_body_entered(_body: Node2D) -> void:
 	if self.name == "FinalCoin":
-		print("You have finished Level 01")
-	Global.increase_score()
-	if Global.get_score() == Global.TOTAL_COINS:
-		%FinalCoin.visible = true
-	audio_stream_player.play()
-	animated_sprite.visible = false
-	collision_shape.call_deferred("set", "disabled", true)
+		get_tree().change_scene_to_file("res://Scenes/congratulations.tscn")
+	else:
+		Global.increase_score()
+		if Global.get_score() == Global.TOTAL_COINS:
+			%FinalCoin.animated_sprite.visible = true
+			%FinalCoin.collision_shape.call_deferred("set", "disabled", false)
+		audio_stream_player.play()
+		animated_sprite.visible = false
+		collision_shape.call_deferred("set", "disabled", true)
 	
 	
