@@ -233,4 +233,4 @@ bus = &"SoundFX"
 
 [node name="CoyoteTimer" type="Timer" parent="Jump"]
 
-[connection signal="timeout" from="Jump/CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
+[node name="BufferTimer" type="Timer" parent="Jump"]
