@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkvalvx1ooh5d"]
+
+[ext_resource type="Script" path="res://Scripts/trophy.gd" id="1_b8xwr"]
+[ext_resource type="Texture2D" uid="uid://bpjrwg5lhjag0" path="res://Assets/sprites/Golden Trophy Large.png" id="2_ekbil"]
+[ext_resource type="AudioStream" uid="uid://3oqaj53jbt3i" path="res://Assets/sounds/power_up.wav" id="3_75er1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6ei8"]
+size = Vector2(74, 123)
+
+[node name="Trophy" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_b8xwr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.999992, -67)
+scale = Vector2(0.394895, 0.394895)
+texture = ExtResource("2_ekbil")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -68.5)
+shape = SubResource("RectangleShape2D_p6ei8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_75er1")
+bus = &"SoundFX"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
