@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 
 const SPEED = 100.0
+const RUN_SPEED = 140.0
+var run_effect_is_active: bool = false
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 
@@ -25,8 +27,12 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.flip_h=false
 		else:
 			animated_sprite.flip_h=true
-		velocity.x = direction * SPEED
+		velocity.x = direction * (RUN_SPEED if Input.is_action_pressed("run") else SPEED)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func enable_material(material: Material) -> void:
+	animated_sprite.material = material

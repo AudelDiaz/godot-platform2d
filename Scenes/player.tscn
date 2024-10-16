@@ -1,9 +1,11 @@
-[gd_scene load_steps=33 format=3 uid="uid://d3g8fnv8lupc0"]
+[gd_scene load_steps=35 format=3 uid="uid://d3g8fnv8lupc0"]
 
 [ext_resource type="Texture2D" uid="uid://besaq8umhu1h7" path="res://Assets/sprites/knight.png" id="1_ee2in"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_xh651"]
+[ext_resource type="Material" uid="uid://dyw0c2m7fiota" path="res://materials/powerup_material.tres" id="2_megwt"]
 [ext_resource type="AudioStream" uid="uid://cbma3ohs0rwn0" path="res://Assets/sounds/jump.wav" id="3_7mkkp"]
 [ext_resource type="Script" path="res://Scripts/jump.gd" id="3_j582g"]
+[ext_resource type="Script" path="res://Scripts/run_efect.gd" id="5_2xxhb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_irldm"]
 atlas = ExtResource("1_ee2in")
@@ -216,7 +218,7 @@ script = ExtResource("1_xh651")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_wccq7")
-animation = &"jump"
+animation = &"run"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -233,3 +235,9 @@ bus = &"SoundFX"
 [node name="CoyoteTimer" type="Timer" parent="Jump"]
 
 [node name="BufferTimer" type="Timer" parent="Jump"]
+
+[node name="RunEfect" type="Node" parent="."]
+script = ExtResource("5_2xxhb")
+effect_material = ExtResource("2_megwt")
+
+[node name="RunTimer" type="Timer" parent="RunEfect"]
