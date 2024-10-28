@@ -13,14 +13,16 @@ func _ready() -> void:
 	player = get_parent()
 	player.run_effect.connect(_on_player_run_effect)
 	run_timer.timeout.connect(_on_timeout)
+	MusicBackground.pitch_scale = 1
 
 func _on_player_run_effect() -> void:
 	if run_timer.time_left <= 0:
 		player.run_effect_is_active = true
 		player.enable_material(effect_material)
-		
+		MusicBackground.pitch_scale = 1.5
 	run_timer.start(effect_duration + run_timer.time_left)
 
 func _on_timeout() -> void:
 	player.run_effect_is_active = false
 	player.enable_material(null)
+	MusicBackground.pitch_scale = 1

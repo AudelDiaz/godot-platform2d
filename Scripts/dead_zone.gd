@@ -5,7 +5,6 @@ extends Area2D
 
 
 func _on_body_entered(body: Node2D) -> void:
-	print("You are dead!")
 	dead_sound.play()
 	Global.reset_score()
 	Global.increase_deads()
