@@ -24,8 +24,7 @@ func increase_deads():
 	_player_deads += 1
 	
 func level_finished(level_number: int):
-	print(level_number)
-	_global_score["{level}".format({"level": level_number})] = { "coins": _player_score, "deads": _player_deads}
+	_global_score["Level {level}".format({"level": level_number})] = { "coins": _player_score, "deads": _player_deads}
 	save_data()
 	
 func save_data():

@@ -7,7 +7,7 @@ operator = 2
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_ekane"]
 parameter_name = "Velocity"
 default_value_enabled = true
-default_value = 10.0
+default_value = 20.0
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_8th4y"]
 source = 2
@@ -35,7 +35,7 @@ code = "shader_type canvas_item;
 render_mode blend_mix;
 
 uniform vec4 Color : source_color = vec4(1.000000, 1.000000, 0.000000, 1.000000);
-uniform float Velocity = 10;
+uniform float Velocity = 20;
 
 
 
@@ -79,7 +79,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-624.58, -43.2027)
+graph_offset = Vector2(-763.647, 10.877)
 mode = 1
 flags/light_only = false
 nodes/fragment/0/position = Vector2(720, 120)

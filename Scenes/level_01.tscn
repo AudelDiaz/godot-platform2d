@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://cm7x6tv4dnan"]
+[gd_scene load_steps=19 format=4 uid="uid://cm7x6tv4dnan"]
 
 [ext_resource type="TileSet" uid="uid://dvkm0u4j7xysj" path="res://tile_set.tres" id="1_iwit0"]
 [ext_resource type="PackedScene" uid="uid://ekgjtx67pvel" path="res://Scenes/platform.tscn" id="2_li1fq"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ddvcm6fgtmjvp" path="res://Scenes/pause_menu.tscn" id="8_dlr5k"]
 [ext_resource type="PackedScene" uid="uid://dfj68x0piwjxv" path="res://Scenes/touch_controls.tscn" id="9_fqb6s"]
 [ext_resource type="PackedScene" uid="uid://dkvalvx1ooh5d" path="res://Scenes/trophy.tscn" id="10_qprkn"]
+[ext_resource type="PackedScene" uid="uid://bwhg81e2nlcdx" path="res://Scenes/bottle.tscn" id="11_mleaf"]
 
 [sub_resource type="Animation" id="Animation_6mceb"]
 resource_name = "PlatformMovement"
@@ -231,3 +232,6 @@ position = Vector2(140, -50)
 [node name="Trophy" parent="." instance=ExtResource("10_qprkn")]
 position = Vector2(631, -179)
 scale = Vector2(0.25, 0.25)
+
+[node name="Bottle" parent="." instance=ExtResource("11_mleaf")]
+position = Vector2(189, -6)

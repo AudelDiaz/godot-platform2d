@@ -6,6 +6,7 @@ const RUN_SPEED = 140.0
 var run_effect_is_active: bool = false
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+signal run_effect
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -27,12 +28,14 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.flip_h=false
 		else:
 			animated_sprite.flip_h=true
-		velocity.x = direction * (RUN_SPEED if Input.is_action_pressed("run") else SPEED)
+		velocity.x = direction * (RUN_SPEED if (run_effect_is_active or Input.is_action_pressed("run")) else SPEED)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
 
+func start_run_effect() -> void:
+	run_effect.emit()
 
-func enable_material(material: Material) -> void:
-	animated_sprite.material = material
+func enable_material(custom_material: Material) -> void:
+	animated_sprite.material = custom_material

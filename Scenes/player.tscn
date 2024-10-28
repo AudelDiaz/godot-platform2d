@@ -241,3 +241,4 @@ script = ExtResource("5_2xxhb")
 effect_material = ExtResource("2_megwt")
 
 [node name="RunTimer" type="Timer" parent="RunEfect"]
+one_shot = true

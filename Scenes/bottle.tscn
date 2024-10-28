@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwhg81e2nlcdx"]
+
+[ext_resource type="Texture2D" uid="uid://cns5kiyq7bsvh" path="res://Assets/sprites/world_tileset.png" id="1_fu7si"]
+[ext_resource type="Script" path="res://Scripts/bottle.gd" id="2_t5guy"]
+[ext_resource type="AudioStream" uid="uid://3oqaj53jbt3i" path="res://Assets/sounds/power_up.wav" id="3_1eble"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ws6yb"]
+size = Vector2(6, 12)
+
+[node name="Bottle" type="Sprite2D"]
+position = Vector2(0, -8)
+texture = ExtResource("1_fu7si")
+region_enabled = true
+region_rect = Rect2(0, 128, 16, 16)
+script = ExtResource("2_t5guy")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ws6yb")
+
+[node name="PowerUpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1eble")
+bus = &"SoundFX"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="finished" from="PowerUpSound" to="." method="_on_power_up_sound_finished"]
