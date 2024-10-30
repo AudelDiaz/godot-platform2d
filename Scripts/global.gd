@@ -11,11 +11,14 @@ var _time_score = null
 
 var _global_score = {}
 
+signal score_updated
+
 func _ready() -> void:
 	load_game()
 
 func increase_score():
 	_player_score += 1
+	score_updated.emit(_player_score)
 
 func reset_score():
 	_player_score = 0

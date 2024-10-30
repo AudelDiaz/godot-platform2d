@@ -1,11 +1,12 @@
-extends Control
-@onready var color_rect: ColorRect = $CanvasLayer/ColorRect
-@onready var v_box_container: VBoxContainer = $CanvasLayer/VBoxContainer
+extends CanvasLayer
+@onready var color_rect: ColorRect = $ColorRect
+@onready var v_box_container: VBoxContainer = $VBoxContainer
 
 
 func _ready() -> void:
 	color_rect.visible = false
 	v_box_container.visible = false
+	visible = true
 	
 func set_paused():
 	get_tree().paused = not get_tree().paused

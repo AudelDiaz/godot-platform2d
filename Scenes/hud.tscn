@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3wras2kannf2"]
+
+[ext_resource type="Script" path="res://Scripts/hud.gd" id="1_4v4lf"]
+[ext_resource type="Texture2D" uid="uid://d3r4m3iuidgrc" path="res://Assets/sprites/coin.png" id="1_r8gnj"]
+[ext_resource type="FontFile" uid="uid://bwj8cb50v5gfb" path="res://Assets/fonts/PixelOperator8.ttf" id="2_w7670"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkqn1"]
+atlas = ExtResource("1_r8gnj")
+region = Rect2(0, 0, 16, 16)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_4v4lf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = -1
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 88.0
+offset_bottom = 88.0
+texture = SubResource("AtlasTexture_kkqn1")
+
+[node name="coins" type="Label" parent="."]
+offset_left = 116.0
+offset_top = 44.0
+offset_right = 204.0
+offset_bottom = 76.0
+size_flags_vertical = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_w7670")
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="x" type="Label" parent="."]
+offset_left = 84.0
+offset_top = 44.0
+offset_right = 128.0
+offset_bottom = 76.0
+size_flags_vertical = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_w7670")
+theme_override_font_sizes/font_size = 32
+text = "x "

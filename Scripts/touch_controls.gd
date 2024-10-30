@@ -1,9 +1,12 @@
-extends Control
+extends CanvasLayer
 
-@onready var left_button: TouchScreenButton = $CanvasLayer/LeftButton
-@onready var right_button: TouchScreenButton = $CanvasLayer/RightButton
-@onready var jump_button: TouchScreenButton = $CanvasLayer/JumpButton
+@onready var left_button: TouchScreenButton = $LeftButton
+@onready var right_button: TouchScreenButton = $RightButton
+@onready var jump_button: TouchScreenButton = $JumpButton
 
+
+func _ready() -> void:
+	visible = true
 
 func _on_left_button_pressed() -> void:
 	left_button.modulate.a = 0.5
