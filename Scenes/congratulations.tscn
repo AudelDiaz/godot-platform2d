@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjns2oqhpnjbj"]
+[gd_scene load_steps=7 format=3 uid="uid://cjns2oqhpnjbj"]
 
 [ext_resource type="Script" path="res://Scripts/congratulations.gd" id="1_a7a3e"]
 [ext_resource type="Texture2D" uid="uid://di0p5y3r1idrd" path="res://Assets/Mountain-Dusk.png" id="1_bqyye"]
 [ext_resource type="FontFile" uid="uid://b24rw881o2sbv" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="2_lp8u5"]
 [ext_resource type="FontFile" uid="uid://bwj8cb50v5gfb" path="res://Assets/fonts/PixelOperator8.ttf" id="3_kxj13"]
+[ext_resource type="PackedScene" uid="uid://bf5wvkrwp6mku" path="res://Scenes/coin.tscn" id="5_e4goc"]
+[ext_resource type="Texture2D" uid="uid://besaq8umhu1h7" path="res://Assets/sprites/knight.png" id="5_se1qx"]
 
 [node name="Congratulations" type="Control"]
 layout_mode = 3
@@ -30,19 +32,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -72.0
-offset_right = 150.0
-offset_bottom = 73.0
+offset_left = -387.0
+offset_top = -157.0
+offset_right = 387.0
+offset_bottom = 312.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 65
 
 [node name="Finish" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 6
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_lp8u5")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 32
 text = "CONGRATULATIONS, YOU HAVE FINISHED!
 
 WANT TO PLAY AGAIN?"
@@ -67,6 +70,53 @@ theme_override_fonts/font = ExtResource("3_kxj13")
 theme_override_font_sizes/font_size = 32
 text = "NO"
 flat = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="deaths" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_kxj13")
+theme_override_font_sizes/font_size = 32
+text = "Deaths
+x 10"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+visible = false
+position = Vector2(235, 125)
+scale = Vector2(6.00412, 6.00412)
+texture = ExtResource("5_se1qx")
+region_enabled = true
+region_rect = Rect2(99, 236, 32, 22)
+region_filter_clip_enabled = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Coin" parent="VBoxContainer/HBoxContainer2/VBoxContainer2" instance=ExtResource("5_e4goc")]
+visible = false
+position = Vector2(86, 29)
+rotation = -3.14159
+scale = Vector2(6.82804, 6.82804)
+
+[node name="coins" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_kxj13")
+theme_override_font_sizes/font_size = 32
+text = "coins
+x 12"
+horizontal_alignment = 1
+uppercase = true
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/YesButton" to="." method="_on_yes_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/NoButton" to="." method="_on_no_button_pressed"]

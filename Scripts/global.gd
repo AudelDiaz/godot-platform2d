@@ -4,7 +4,10 @@ extends Node
 const TOTAL_COINS:int = 11
 
 var _player_score = 0
-var _player_deads = 0
+var _player_deaths = 0
+var _level_start_time = null
+var _level_end_time = null
+var _time_score = null
 
 var _global_score = {}
 
@@ -21,10 +24,22 @@ func get_score():
 	return _player_score
 	
 func increase_deads():
-	_player_deads += 1
+	_player_deaths += 1
+	
+func get_deaths():
+	return _player_deaths
+	
+func set_start_time(time):
+	_level_start_time = time
+	print(_level_start_time)
+	
+func get_time_score():
+	return _time_score
 	
 func level_finished(level_number: int):
-	_global_score["Level {level}".format({"level": level_number})] = { "coins": _player_score, "deads": _player_deads}
+	_level_end_time = Time.get_datetime_dict_from_system()
+	_time_score = Time.get_time_string_from_unix_time(Time.get_unix_time_from_datetime_dict(_level_end_time)-Time.get_unix_time_from_datetime_dict(_level_start_time))
+	_global_score["Level {level}".format({"level": level_number})] = { "coins": _player_score, "deads": _player_deaths, "time": _time_score}
 	save_data()
 	
 func save_data():
