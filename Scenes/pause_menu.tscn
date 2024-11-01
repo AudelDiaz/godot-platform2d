@@ -1,19 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddvcm6fgtmjvp"]
+[gd_scene load_steps=5 format=3 uid="uid://ddvcm6fgtmjvp"]
 
 [ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_evofa"]
 [ext_resource type="FontFile" uid="uid://b24rw881o2sbv" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="2_0v8qw"]
+[ext_resource type="Texture2D" uid="uid://di0p5y3r1idrd" path="res://Assets/Mountain-Dusk.png" id="2_uf5jy"]
+[ext_resource type="Script" path="res://Scripts/resume.gd" id="3_pdt6v"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_evofa")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.12549, 0.12549, 0.12549, 0.72549)
+texture = ExtResource("2_uf5jy")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 408.0
@@ -26,13 +28,16 @@ theme_override_constants/separation = 30
 [node name="Resume" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_bottom = NodePath("../MainMenu")
 theme_override_fonts/font = ExtResource("2_0v8qw")
 theme_override_font_sizes/font_size = 32
 text = "RESUME"
+script = ExtResource("3_pdt6v")
 
 [node name="MainMenu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Resume")
 theme_override_fonts/font = ExtResource("2_0v8qw")
 theme_override_font_sizes/font_size = 32
 text = "MAIN MENU"

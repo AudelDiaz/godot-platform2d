@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjns2oqhpnjbj"]
+[gd_scene load_steps=8 format=3 uid="uid://cjns2oqhpnjbj"]
 
 [ext_resource type="Script" path="res://Scripts/congratulations.gd" id="1_a7a3e"]
 [ext_resource type="Texture2D" uid="uid://di0p5y3r1idrd" path="res://Assets/Mountain-Dusk.png" id="1_bqyye"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://bwj8cb50v5gfb" path="res://Assets/fonts/PixelOperator8.ttf" id="3_kxj13"]
 [ext_resource type="PackedScene" uid="uid://bf5wvkrwp6mku" path="res://Scenes/coin.tscn" id="5_e4goc"]
 [ext_resource type="Texture2D" uid="uid://besaq8umhu1h7" path="res://Assets/sprites/knight.png" id="5_se1qx"]
+[ext_resource type="Script" path="res://Scripts/yes_button.gd" id="5_v3mkg"]
 
 [node name="Congratulations" type="Control"]
 layout_mode = 3
@@ -59,13 +60,16 @@ alignment = 1
 
 [node name="YesButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
+focus_neighbor_right = NodePath("../NoButton")
 theme_override_fonts/font = ExtResource("3_kxj13")
 theme_override_font_sizes/font_size = 32
 text = "YES"
 flat = true
+script = ExtResource("5_v3mkg")
 
 [node name="NoButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../YesButton")
 theme_override_fonts/font = ExtResource("3_kxj13")
 theme_override_font_sizes/font_size = 32
 text = "NO"

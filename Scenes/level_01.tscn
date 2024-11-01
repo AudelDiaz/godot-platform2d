@@ -94,14 +94,17 @@ distance = 11.0
 
 [node name="Level01" type="Node2D"]
 
-[node name="HUD" parent="." instance=ExtResource("1_ceq0u")]
-visible = false
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="PauseMenu" parent="." instance=ExtResource("8_dlr5k")]
-visible = false
+[node name="HUD" parent="Control" instance=ExtResource("1_ceq0u")]
 
-[node name="TouchControls" parent="." instance=ExtResource("9_fqb6s")]
-visible = false
+[node name="TouchControls" parent="Control" instance=ExtResource("9_fqb6s")]
+
+[node name="PauseMenu" parent="Control" instance=ExtResource("8_dlr5k")]
 
 [node name="Layers" type="Node2D" parent="."]
 

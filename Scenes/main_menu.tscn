@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnrhe1krq5vtj"]
+[gd_scene load_steps=5 format=3 uid="uid://cnrhe1krq5vtj"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_8m53b"]
 [ext_resource type="Texture2D" uid="uid://di0p5y3r1idrd" path="res://Assets/Mountain-Dusk.png" id="1_iwlva"]
 [ext_resource type="FontFile" uid="uid://b24rw881o2sbv" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="1_u634u"]
+[ext_resource type="Script" path="res://Scripts/play.gd" id="4_kmbq6"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -23,41 +24,65 @@ grow_vertical = 2
 texture = ExtResource("1_iwlva")
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -456.0
-offset_top = -56.0
-offset_right = 450.0
-offset_bottom = 283.0
-theme_override_constants/separation = 64
-
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="."]
 layout_mode = 2
+offset_left = 560.0
+offset_top = 408.0
+offset_right = 962.0
+offset_bottom = 472.0
+theme_override_colors/font_color = Color(0.984314, 0.839216, 0.65098, 1)
+theme_override_colors/font_shadow_color = Color(0.172549, 0.145098, 0.27451, 1)
+theme_override_fonts/font = ExtResource("1_u634u")
+theme_override_font_sizes/font_size = 32
+text = "By @AudelDiaz"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+offset_left = 336.0
+offset_top = 320.0
+offset_right = 1242.0
+offset_bottom = 419.0
 theme_override_colors/font_color = Color(0.984314, 0.839216, 0.65098, 1)
 theme_override_colors/font_shadow_color = Color(0.172549, 0.145098, 0.27451, 1)
 theme_override_fonts/font = ExtResource("1_u634u")
 theme_override_font_sizes/font_size = 48
-text = "PLATFORM 2D TUTORIAL
-By @AudelDiaz"
+text = "Knight Adventure"
 horizontal_alignment = 1
+uppercase = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -272.0
+offset_right = -896.0
+offset_bottom = -112.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 30
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 0
+focus_neighbor_bottom = NodePath("../Quit")
 theme_override_colors/font_color = Color(0.984314, 0.662745, 0.584314, 1)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_u634u")
 theme_override_font_sizes/font_size = 40
 text = "PLAY"
 flat = true
+script = ExtResource("4_kmbq6")
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Play")
 theme_override_colors/font_color = Color(0.878431, 0.282353, 0.231373, 1)
+theme_override_colors/font_outline_color = Color(0.180392, 0.180392, 0.180392, 0)
 theme_override_fonts/font = ExtResource("1_u634u")
 theme_override_font_sizes/font_size = 40
 text = "EXIT"

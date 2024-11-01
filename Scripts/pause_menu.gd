@@ -1,17 +1,22 @@
 extends CanvasLayer
-@onready var color_rect: ColorRect = $ColorRect
+
 @onready var v_box_container: VBoxContainer = $VBoxContainer
+@onready var texture_rect: TextureRect = $TextureRect
+@onready var resume: Button = $VBoxContainer/Resume
 
 
 func _ready() -> void:
-	color_rect.visible = false
+	texture_rect.visible = false
 	v_box_container.visible = false
 	visible = true
 	
+	
+	
 func set_paused():
 	get_tree().paused = not get_tree().paused
-	color_rect.visible = not color_rect.visible
+	texture_rect.visible = not texture_rect.visible
 	v_box_container.visible = not v_box_container.visible
+	resume.grab_focus()
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
