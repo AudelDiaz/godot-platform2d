@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cjns2oqhpnjbj"]
+[gd_scene load_steps=6 format=3 uid="uid://cjns2oqhpnjbj"]
 
-[ext_resource type="Script" path="res://Scripts/congratulations.gd" id="1_a7a3e"]
-[ext_resource type="Texture2D" uid="uid://di0p5y3r1idrd" path="res://Assets/Mountain-Dusk.png" id="1_bqyye"]
-[ext_resource type="FontFile" uid="uid://b24rw881o2sbv" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="2_lp8u5"]
-[ext_resource type="FontFile" uid="uid://bwj8cb50v5gfb" path="res://Assets/fonts/PixelOperator8.ttf" id="3_kxj13"]
-[ext_resource type="PackedScene" uid="uid://bf5wvkrwp6mku" path="res://Scenes/coin.tscn" id="5_e4goc"]
-[ext_resource type="Texture2D" uid="uid://besaq8umhu1h7" path="res://Assets/sprites/knight.png" id="5_se1qx"]
-[ext_resource type="Script" path="res://Scripts/yes_button.gd" id="5_v3mkg"]
+[ext_resource type="Script" path="res://Scripts/congratulations.gd" id="1_ma332"]
+[ext_resource type="Texture2D" uid="uid://di0p5y3r1idrd" path="res://Assets/Mountain-Dusk.png" id="2_wwj64"]
+[ext_resource type="FontFile" uid="uid://b24rw881o2sbv" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="3_w0wrn"]
+[ext_resource type="FontFile" uid="uid://bwj8cb50v5gfb" path="res://Assets/fonts/PixelOperator8.ttf" id="4_u13em"]
+[ext_resource type="Script" path="res://Scripts/yes_button.gd" id="5_7vjp7"]
 
 [node name="Congratulations" type="Control"]
 layout_mode = 3
@@ -15,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_a7a3e")
+script = ExtResource("1_ma332")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -24,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_bqyye")
+texture = ExtResource("2_wwj64")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -45,7 +43,7 @@ theme_override_constants/separation = 65
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_lp8u5")
+theme_override_fonts/font = ExtResource("3_w0wrn")
 theme_override_font_sizes/font_size = 32
 text = "CONGRATULATIONS, YOU HAVE FINISHED!
 
@@ -61,16 +59,16 @@ alignment = 1
 [node name="YesButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 focus_neighbor_right = NodePath("../NoButton")
-theme_override_fonts/font = ExtResource("3_kxj13")
+theme_override_fonts/font = ExtResource("4_u13em")
 theme_override_font_sizes/font_size = 32
 text = "YES"
 flat = true
-script = ExtResource("5_v3mkg")
+script = ExtResource("5_7vjp7")
 
 [node name="NoButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 focus_neighbor_left = NodePath("../YesButton")
-theme_override_fonts/font = ExtResource("3_kxj13")
+theme_override_fonts/font = ExtResource("4_u13em")
 theme_override_font_sizes/font_size = 32
 text = "NO"
 flat = true
@@ -86,36 +84,21 @@ size_flags_horizontal = 3
 
 [node name="deaths" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_kxj13")
+theme_override_fonts/font = ExtResource("4_u13em")
 theme_override_font_sizes/font_size = 32
 text = "Deaths
 x 10"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
-visible = false
-position = Vector2(235, 125)
-scale = Vector2(6.00412, 6.00412)
-texture = ExtResource("5_se1qx")
-region_enabled = true
-region_rect = Rect2(99, 236, 32, 22)
-region_filter_clip_enabled = true
-
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Coin" parent="VBoxContainer/HBoxContainer2/VBoxContainer2" instance=ExtResource("5_e4goc")]
-visible = false
-position = Vector2(86, 29)
-rotation = -3.14159
-scale = Vector2(6.82804, 6.82804)
-
 [node name="coins" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_kxj13")
+theme_override_fonts/font = ExtResource("4_u13em")
 theme_override_font_sizes/font_size = 32
 text = "coins
 x 12"

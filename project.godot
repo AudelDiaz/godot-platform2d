@@ -11,14 +11,15 @@ config_version=5
 [application]
 
 config/name="Level01-Audel"
-run/main_scene="res://Scenes/main_menu.tscn"
+run/main_scene="res://Scenes/UI/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://Scripts/global.gd"
-MusicBackground="*res://Scenes/music_background.tscn"
+MusicBackground="*res://Scenes/Config/music_background.tscn"
+LevelManager="*res://Scripts/level_manager.gd"
 
 [display]
 

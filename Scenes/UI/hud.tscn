@@ -1,15 +1,15 @@
 [gd_scene load_steps=5 format=3 uid="uid://b3wras2kannf2"]
 
-[ext_resource type="Script" path="res://Scripts/hud.gd" id="1_4v4lf"]
-[ext_resource type="Texture2D" uid="uid://d3r4m3iuidgrc" path="res://Assets/sprites/coin.png" id="1_r8gnj"]
-[ext_resource type="FontFile" uid="uid://bwj8cb50v5gfb" path="res://Assets/fonts/PixelOperator8.ttf" id="2_w7670"]
+[ext_resource type="Script" path="res://Scripts/hud.gd" id="1_wioha"]
+[ext_resource type="Texture2D" uid="uid://d3r4m3iuidgrc" path="res://Assets/sprites/coin.png" id="2_f7jks"]
+[ext_resource type="FontFile" uid="uid://bwj8cb50v5gfb" path="res://Assets/fonts/PixelOperator8.ttf" id="3_2o52o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kkqn1"]
-atlas = ExtResource("1_r8gnj")
+atlas = ExtResource("2_f7jks")
 region = Rect2(0, 0, 16, 16)
 
 [node name="HUD" type="CanvasLayer"]
-script = ExtResource("1_4v4lf")
+script = ExtResource("1_wioha")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 24.0
@@ -26,7 +26,7 @@ offset_bottom = 76.0
 size_flags_vertical = 1
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_w7670")
+theme_override_fonts/font = ExtResource("3_2o52o")
 theme_override_font_sizes/font_size = 32
 text = "0"
 
@@ -38,6 +38,6 @@ offset_bottom = 76.0
 size_flags_vertical = 1
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_w7670")
+theme_override_fonts/font = ExtResource("3_2o52o")
 theme_override_font_sizes/font_size = 32
 text = "x "

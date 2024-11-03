@@ -12,8 +12,8 @@ func _ready() -> void:
 
 func _on_yes_button_pressed() -> void:
 	Global.reset_score()
-	get_tree().change_scene_to_file("res://Scenes/level_01.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/level_01.tscn")
 
 
 func _on_no_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/UI/main_menu.tscn")

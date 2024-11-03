@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6yh1ap63qa1g"]
+
+[ext_resource type="Script" path="res://Scripts/level_element.gd" id="1_c5tji"]
+[ext_resource type="Texture2D" uid="uid://di0p5y3r1idrd" path="res://Assets/Mountain-Dusk.png" id="1_pon2j"]
+
+[node name="LevelElement" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_c5tji")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_pon2j")
+
+[node name="NameContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="LabelName" type="Label" parent="NameContainer"]
+layout_mode = 2
+text = "Label Name:"
+uppercase = true
+
+[node name="NameValue" type="Label" parent="NameContainer"]
+layout_mode = 2
+text = "Label Value
+"
+uppercase = true
+
+[node name="TimeContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="LabelTime" type="Label" parent="TimeContainer"]
+layout_mode = 2
+text = "Label Time:"
+uppercase = true
+
+[node name="TimeValue" type="Label" parent="TimeContainer"]
+layout_mode = 2
+text = "Label Value
+"
+uppercase = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+text = "Play"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -10,7 +10,6 @@ var tween_duration: float = 1
 
 
 func _on_body_entered(_body: Node2D) -> void:
-	print("Body has touched Trophy")
 	var tween = get_tree().create_tween().bind_node(trophy).set_parallel(true)
 	tween.tween_property(trophy, "position", trophy.position + Vector2.UP*tween_distance, tween_duration).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(sprite_2d,"self_modulate", Color(Color.WHITE, 0), tween_duration)
@@ -20,4 +19,4 @@ func _on_body_entered(_body: Node2D) -> void:
  
 
 func _on_timer_timeout() -> void:
-	get_tree().change_scene_to_file("res://Scenes/congratulations.tscn")
+	get_tree().change_scene_to_file("res://Scenes/UI/congratulations.tscn")
