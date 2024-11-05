@@ -91,6 +91,8 @@ _data = {
 
 [node name="Level02" type="Node2D"]
 
+[node name="UIControls" parent="." instance=ExtResource("1_bisb5")]
+
 [node name="Player" parent="." instance=ExtResource("1_0rrbf")]
 position = Vector2(101, 639)
 
@@ -147,8 +149,6 @@ position = Vector2(1448, 559)
 
 [node name="Enemy6" parent="." instance=ExtResource("3_fldr4")]
 position = Vector2(1535, 559)
-
-[node name="UIControls" parent="." instance=ExtResource("1_bisb5")]
 
 [node name="Platform" parent="." instance=ExtResource("3_llh2e")]
 position = Vector2(504, 675)

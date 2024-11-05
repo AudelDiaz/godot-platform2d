@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var jump_button: TouchScreenButton = $JumpButton
+@onready var jump_button: TouchScreenButton = $Control2/JumpButton
 
 
 func _ready() -> void:

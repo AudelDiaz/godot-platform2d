@@ -9,13 +9,7 @@
 script = ExtResource("1_5ijec")
 
 [node name="Virtual Joystick" parent="." instance=ExtResource("4_8yxlr")]
-offset_left = 170.0
-offset_top = -135.035
-offset_right = 170.0
-offset_bottom = -135.035
-pressed_color = Color(0.537011, 0.537011, 0.537011, 1)
 joystick_mode = 1
-visibility_mode = 1
 action_left = "move_left"
 action_right = "move_right"
 action_up = ""
