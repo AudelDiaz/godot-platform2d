@@ -46,6 +46,9 @@ func load_game():
 		return # Error! We don't have a save to load.
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.READ)
 	_global_score = JSON.parse_string(save_file.get_as_text())
-	_global_score.merge(LevelManager._levels)
+	if len(_global_score.keys()) != len(LevelManager._levels.keys()):
+		_global_score.merge(LevelManager._levels, true)
+	else:
+		_global_score.merge(LevelManager._levels)
 	LevelManager._levels = _global_score
 	print(_global_score)
