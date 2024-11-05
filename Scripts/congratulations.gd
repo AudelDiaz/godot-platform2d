@@ -6,7 +6,7 @@ extends Control
 
 
 func _ready() -> void:
-	finish.text = "CONGRATULATIONS!\nYOU HAVE FINISHED IN {time_score}!\n\nWANT TO PLAY AGAIN?".format({"time_score": Global.get_time_score()})
+	finish.text = "CONGRATULATIONS!\nYOU HAVE FINISHED IN {time_score}!\n\nWANT TO PLAY AGAIN?".format({"time_score": LevelManager.runtime})
 	deaths.text = "deahts\nx" + str(Global.get_deaths())
 	coins.text = "coins\nx" + str(Global.get_score())
 

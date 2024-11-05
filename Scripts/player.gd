@@ -8,9 +8,6 @@ var run_effect_is_active: bool = false
 
 signal run_effect
 
-func _ready() -> void:
-	Global.set_start_time(Time.get_time_dict_from_system())
-
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():

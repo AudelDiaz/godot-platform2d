@@ -26,10 +26,10 @@ expand_mode = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
-offset_left = 560.0
-offset_top = 408.0
-offset_right = 962.0
-offset_bottom = 472.0
+offset_left = 624.0
+offset_top = 328.0
+offset_right = 1026.0
+offset_bottom = 392.0
 theme_override_colors/font_color = Color(0.984314, 0.839216, 0.65098, 1)
 theme_override_colors/font_shadow_color = Color(0.172549, 0.145098, 0.27451, 1)
 theme_override_fonts/font = ExtResource("3_dh3i3")
@@ -40,10 +40,10 @@ uppercase = true
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 2
-offset_left = 336.0
-offset_top = 320.0
-offset_right = 1242.0
-offset_bottom = 419.0
+offset_left = 368.0
+offset_top = 240.0
+offset_right = 1274.0
+offset_bottom = 339.0
 theme_override_colors/font_color = Color(0.984314, 0.839216, 0.65098, 1)
 theme_override_colors/font_shadow_color = Color(0.172549, 0.145098, 0.27451, 1)
 theme_override_fonts/font = ExtResource("3_dh3i3")
@@ -59,9 +59,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 64.0
-offset_top = -272.0
-offset_right = -896.0
-offset_bottom = -112.0
+offset_top = -248.0
+offset_right = -748.0
+offset_bottom = -44.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 30
@@ -69,7 +69,7 @@ theme_override_constants/separation = 30
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-focus_neighbor_bottom = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../LevelSelect")
 theme_override_colors/font_color = Color(0.984314, 0.662745, 0.584314, 1)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_dh3i3")
@@ -78,9 +78,20 @@ text = "PLAY"
 flat = true
 script = ExtResource("4_ijoo3")
 
-[node name="Quit" type="Button" parent="VBoxContainer"]
+[node name="LevelSelect" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Play")
+focus_neighbor_bottom = NodePath("../Quit")
+theme_override_colors/font_color = Color(0.878431, 0.282353, 0.231373, 1)
+theme_override_colors/font_outline_color = Color(0.180392, 0.180392, 0.180392, 0)
+theme_override_fonts/font = ExtResource("3_dh3i3")
+theme_override_font_sizes/font_size = 40
+text = "LEVEL SELECT"
+flat = true
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../LevelSelect")
 theme_override_colors/font_color = Color(0.878431, 0.282353, 0.231373, 1)
 theme_override_colors/font_outline_color = Color(0.180392, 0.180392, 0.180392, 0)
 theme_override_fonts/font = ExtResource("3_dh3i3")
@@ -89,4 +100,5 @@ text = "EXIT"
 flat = true
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/LevelSelect" to="." method="_on_level_select_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

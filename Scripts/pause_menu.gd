@@ -29,5 +29,13 @@ func _on_resume_pressed() -> void:
 
 func _on_main_menu_pressed() -> void:
 	set_paused()
-	LevelManager.complete_level()
+	get_tree().change_scene_to_file("res://Scenes/UI/main_menu.tscn")
+
+
+func _on_level_select_pressed() -> void:
+	set_paused()
 	get_tree().change_scene_to_file("res://Scenes/Config/level_select.tscn")
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()

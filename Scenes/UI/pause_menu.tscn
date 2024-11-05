@@ -38,9 +38,29 @@ script = ExtResource("4_cvlev")
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Resume")
+focus_neighbor_bottom = NodePath("../Level Select")
 theme_override_fonts/font = ExtResource("3_2awm5")
 theme_override_font_sizes/font_size = 32
 text = "MAIN MENU"
 
+[node name="Level Select" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../MainMenu")
+focus_neighbor_bottom = NodePath("../Quit")
+theme_override_fonts/font = ExtResource("3_2awm5")
+theme_override_font_sizes/font_size = 32
+text = "LEVEL SELECT"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Level Select")
+theme_override_fonts/font = ExtResource("3_2awm5")
+theme_override_font_sizes/font_size = 32
+text = "QUIT"
+
 [connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/Level Select" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
