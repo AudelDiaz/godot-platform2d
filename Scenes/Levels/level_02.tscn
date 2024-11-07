@@ -10,6 +10,21 @@
 [ext_resource type="PackedScene" uid="uid://bf5wvkrwp6mku" path="res://Scenes/Elements/coin.tscn" id="8_hv60o"]
 [ext_resource type="PackedScene" uid="uid://dkvalvx1ooh5d" path="res://Scenes/Elements/trophy.tscn" id="9_48yg5"]
 
+[sub_resource type="Animation" id="Animation_mfun3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2057, 388)]
+}
+
 [sub_resource type="Animation" id="Animation_ebqpd"]
 resource_name = "movement"
 length = 2.0
@@ -27,7 +42,16 @@ tracks/0/keys = {
 "values": [Vector2(2057, 388), Vector2(1880, 388)]
 }
 
-[sub_resource type="Animation" id="Animation_mfun3"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l47rs"]
+_data = {
+"RESET": SubResource("Animation_mfun3"),
+"movement": SubResource("Animation_ebqpd")
+}
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8uoec"]
+distance = 11.0
+
+[sub_resource type="Animation" id="Animation_th3w8"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -39,17 +63,8 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(2057, 388)]
+"values": [Vector2(504, 675)]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_l47rs"]
-_data = {
-"RESET": SubResource("Animation_mfun3"),
-"movement": SubResource("Animation_ebqpd")
-}
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8uoec"]
-distance = 11.0
 
 [sub_resource type="Animation" id="Animation_8c7xv"]
 resource_name = "movement"
@@ -66,21 +81,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(504, 675), Vector2(616, 675)]
-}
-
-[sub_resource type="Animation" id="Animation_th3w8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(504, 675)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4tm4q"]

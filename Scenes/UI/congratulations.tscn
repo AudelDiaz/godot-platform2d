@@ -59,18 +59,20 @@ alignment = 1
 [node name="YesButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 focus_neighbor_right = NodePath("../NoButton")
-theme_override_fonts/font = ExtResource("4_u13em")
+theme_override_colors/font_color = Color(0.831373, 0.756863, 0.0745098, 1)
+theme_override_fonts/font = ExtResource("3_w0wrn")
 theme_override_font_sizes/font_size = 32
-text = "YES"
+text = "RE-PLAY"
 flat = true
 script = ExtResource("5_7vjp7")
 
 [node name="NoButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 focus_neighbor_left = NodePath("../YesButton")
-theme_override_fonts/font = ExtResource("4_u13em")
+theme_override_colors/font_color = Color(0.831373, 0.756863, 0.0745098, 1)
+theme_override_fonts/font = ExtResource("3_w0wrn")
 theme_override_font_sizes/font_size = 32
-text = "NO"
+text = "NEXT"
 flat = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]

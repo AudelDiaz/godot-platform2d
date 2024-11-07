@@ -4,13 +4,7 @@ var _next_level = ""
 
 func _ready() -> void:
 	MusicBackground.pitch_scale = 1
-	for level_key in LevelManager._levels.keys():
-		var level = LevelManager._levels[level_key]
-		if level.is_unlocked:
-			ResourceLoader.exists(level.scene_path)
-			_next_level = level_key
-		else:
-			break
+	_next_level = LevelManager.next_level()
 	
 func _on_play_pressed() -> void:
 	LevelManager.load_level(_next_level)
