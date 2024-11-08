@@ -1,6 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://bydhpwx1jhtc0"]
+[gd_scene load_steps=7 format=3 uid="uid://bydhpwx1jhtc0"]
 
 [ext_resource type="Script" path="res://Scripts/transition_screen.gd" id="1_d7385"]
+[ext_resource type="FontFile" uid="uid://b24rw881o2sbv" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="2_a6gmm"]
+
+[sub_resource type="Animation" id="Animation_xcti1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_q3dcn"]
 resource_name = "fade_to_black"
@@ -16,21 +32,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_xcti1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_nkers"]
@@ -71,3 +72,18 @@ color = Color(1, 1, 1, 0)
 libraries = {
 "": SubResource("AnimationLibrary_7fvco")
 }
+
+[node name="LevelTitle" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_a6gmm")
+theme_override_font_sizes/font_size = 40
+text = "LEVEL NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

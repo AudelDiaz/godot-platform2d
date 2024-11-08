@@ -75,6 +75,17 @@ theme_override_font_sizes/font_size = 32
 text = "NEXT"
 flat = true
 
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MenuButton" type="Button" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_w0wrn")
+theme_override_font_sizes/font_size = 32
+text = "MAIN MENU"
+flat = true
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
@@ -109,3 +120,4 @@ uppercase = true
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/YesButton" to="." method="_on_yes_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/NoButton" to="." method="_on_no_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/MenuButton" to="." method="_on_menu_button_pressed"]

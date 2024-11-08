@@ -41,9 +41,10 @@ var _levels = {
 }
 
 func load_level(level_key) -> void:
+	Global.reset_score()
 	var scene_path = _levels[level_key].scene_path
 	if ResourceLoader.exists(scene_path):
-		TransitionScreen.transition()
+		TransitionScreen.transition(_levels[level_key].name)
 		await TransitionScreen.on_transition_finished
 		get_tree().change_scene_to_file(scene_path)
 	else:
@@ -58,7 +59,6 @@ func complete_level() -> void:
 	for level_key in _levels:
 		if level_key == _levels[current_level].unlocks:
 			_levels[level_key].is_unlocked = true
-			print(runtime)
 			
 		if level_key == current_level:
 			if _levels[current_level].best_time > runtime or _levels[current_level].best_time == 0:

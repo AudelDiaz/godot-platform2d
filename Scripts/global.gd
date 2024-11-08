@@ -19,6 +19,7 @@ func increase_score():
 
 func reset_score():
 	_player_score = 0
+	_player_deaths = 0
 	LevelManager.runtime = 0.0
 	
 func get_score():

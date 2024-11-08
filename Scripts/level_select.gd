@@ -1,6 +1,6 @@
 extends Control
 
-@onready var grid_container: GridContainer = $ScrollContainer/GridContainer
+@onready var grid_container: HBoxContainer = $ScrollContainer/GridContainer
 @onready var level_element_scene = preload("res://Scenes/Config/level_element.tscn")
 @onready var button: Button = $Button
 
