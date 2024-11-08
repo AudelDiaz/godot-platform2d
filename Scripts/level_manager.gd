@@ -67,13 +67,16 @@ func complete_level() -> void:
 				
 func next_level():
 	var _next_level = null
+	var level = null
 	for level_key in LevelManager._levels.keys():
-		var level = LevelManager._levels[level_key]
+		level = LevelManager._levels[level_key]
 		if level.is_unlocked:
 			ResourceLoader.exists(level.scene_path)
 			_next_level = level_key
 		else:
 			break
+	if current_level == _next_level:
+		print("You have finished all levels, thank you for playing!")
 	return _next_level
 
 func _process(delta: float) -> void:

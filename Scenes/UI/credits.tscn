@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwafd4ega2yfb"]
+
+[ext_resource type="Texture2D" uid="uid://di0p5y3r1idrd" path="res://Assets/Mountain-Dusk.png" id="1_oap4o"]
+[ext_resource type="Script" path="res://Scripts/credits.gd" id="1_tfukm"]
+[ext_resource type="FontFile" uid="uid://b24rw881o2sbv" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="2_3fh62"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchor_left = 0.006
+anchor_right = 0.994
+anchor_bottom = 0.989
+offset_left = -7.68
+offset_right = -1272.32
+offset_bottom = -712.08
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tfukm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_oap4o")
+
+[node name="RichTextLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 32.0
+offset_top = 336.0
+offset_right = 1244.0
+offset_bottom = 536.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_3fh62")
+theme_override_font_sizes/font_size = 32
+text = "Thank you for playing Knight Adveure.
+
+If you wanna know more about my work visit
+https://audeldiaz.work."
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="MenuButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 528.0
+offset_top = 576.0
+offset_right = 740.0
+offset_bottom = 608.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_3fh62")
+theme_override_font_sizes/font_size = 24
+text = "MAIN MENU"
+flat = true
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

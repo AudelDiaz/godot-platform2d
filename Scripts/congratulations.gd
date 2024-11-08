@@ -16,7 +16,12 @@ func _on_yes_button_pressed() -> void:
 
 
 func _on_no_button_pressed() -> void:
-	LevelManager.load_level(LevelManager.next_level())
+	var next_level = LevelManager.next_level()
+	if next_level != null:
+		LevelManager.load_level(next_level)
+	else:
+		get_tree().change_scene_to_file("res://Scenes/UI/main_menu.tscn")
+	
 
 
 func _on_menu_button_pressed() -> void:
