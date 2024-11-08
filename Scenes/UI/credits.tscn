@@ -42,12 +42,15 @@ offset_bottom = 536.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_3fh62")
 theme_override_font_sizes/font_size = 32
-text = "Thank you for playing Knight Adveure.
+text = "Thank you for playing Knight Adventure.
 
-If you wanna know more about my work visit
-https://audeldiaz.work."
+If you wanna know more about my work, 
+please visit:
+
+www.audeldiaz.work."
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -62,6 +65,7 @@ offset_top = 576.0
 offset_right = 740.0
 offset_bottom = 608.0
 grow_horizontal = 2
+theme_override_colors/font_focus_color = Color(0.913858, 0.697327, 0, 1)
 theme_override_fonts/font = ExtResource("2_3fh62")
 theme_override_font_sizes/font_size = 24
 text = "MAIN MENU"
