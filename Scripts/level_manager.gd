@@ -77,6 +77,7 @@ func next_level():
 			break
 	if current_level == _next_level:
 		print("You have finished all levels, thank you for playing!")
+		return null
 	return _next_level
 
 func _process(delta: float) -> void:

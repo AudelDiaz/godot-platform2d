@@ -20,7 +20,7 @@ func _on_no_button_pressed() -> void:
 	if next_level != null:
 		LevelManager.load_level(next_level)
 	else:
-		get_tree().change_scene_to_file("res://Scenes/UI/main_menu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/UI/credits.tscn")
 	
 
 
