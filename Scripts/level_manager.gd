@@ -75,7 +75,7 @@ func next_level():
 			_next_level = level_key
 		else:
 			break
-	if current_level == _next_level:
+	if current_level == _next_level and current_level != "01":
 		print("You have finished all levels, thank you for playing!")
 		return null
 	return _next_level

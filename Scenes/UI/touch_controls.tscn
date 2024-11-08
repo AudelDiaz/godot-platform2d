@@ -63,6 +63,7 @@ position = Vector2(36, 0)
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("5_n8wuk")
 action = "move_left"
+visibility_mode = 1
 
 [node name="Control4" type="Control" parent="."]
 layout_mode = 3
@@ -77,6 +78,7 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(-50, 0)
 texture_normal = ExtResource("6_3pwn7")
 action = "move_right"
+visibility_mode = 1
 
 [connection signal="pressed" from="Control/PauseButton" to="." method="_on_jump_button_pressed"]
 [connection signal="released" from="Control/PauseButton" to="." method="_on_jump_button_released"]
