@@ -41,19 +41,17 @@ var _levels = {
 }
 
 func load_level(level_key) -> void:
-	Global.reset_score()
-	var scene_path = _levels[level_key].scene_path
-	if ResourceLoader.exists(scene_path):
-		TransitionScreen.transition(_levels[level_key].name)
-		await TransitionScreen.on_transition_finished
-		get_tree().change_scene_to_file(scene_path)
+	if level_key != null:
+		Global.reset_score()
+		var scene_path = _levels[level_key].scene_path
+		TransitionScreen.load_scene(scene_path, _levels[level_key].name)
+		current_level = level_key
+		runtime = 0.0
+		is_running = true
 	else:
-		print("Level file not found.")
-	
-	current_level = level_key
-	runtime = 0.0
-	is_running = true
-		
+		TransitionScreen.load_scene("res://Scenes/UI/credits.tscn", "Credits")
+
+
 func complete_level() -> void:
 	is_running = false
 	for level_key in _levels:
@@ -70,8 +68,7 @@ func next_level():
 	var level = null
 	for level_key in LevelManager._levels.keys():
 		level = LevelManager._levels[level_key]
-		if level.is_unlocked:
-			ResourceLoader.exists(level.scene_path)
+		if level.is_unlocked and ResourceLoader.exists(level.scene_path):
 			_next_level = level_key
 		else:
 			break

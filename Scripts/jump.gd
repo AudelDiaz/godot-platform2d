@@ -6,7 +6,7 @@ extends Node2D
 @onready var buffer_timer: Timer = $BufferTimer
 
 @export var coyote_time_duration:float = 0.15 
-@export var buffer_time_duration:float = 0.15
+@export var buffer_time_duration:float = 0.25
 
 const JUMP_VELOCITY = -260.
 
@@ -37,6 +37,8 @@ func _physics_process(_delta: float) -> void:
 	
 	if not was_on_floor and player.is_on_floor() and is_jump_buffered:
 		is_jump_buffered = false
+		buffer_timer.stop()
+		print("buffered jump")
 		jump()
 		
 	was_on_floor = player.is_on_floor()

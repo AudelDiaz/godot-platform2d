@@ -33,7 +33,7 @@ func get_deaths():
 	
 func level_finished(_level_number: int):
 	LevelManager.complete_level()
-	var level_key = LevelManager.current_level
+	var _level_key = LevelManager.current_level
 	_global_score = LevelManager._levels
 	save_data()
 	

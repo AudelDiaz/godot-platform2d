@@ -165,13 +165,13 @@ position = Vector2(1535, 559)
 [node name="Coins" type="Node2D" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("8_hv60o")]
-position = Vector2(232, 658)
+position = Vector2(325, 647)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("8_hv60o")]
-position = Vector2(214, 658)
+position = Vector2(257, 647)
 
 [node name="Coin3" parent="Coins" instance=ExtResource("8_hv60o")]
-position = Vector2(197, 658)
+position = Vector2(184, 647)
 
 [node name="Coin4" parent="Coins" instance=ExtResource("8_hv60o")]
 position = Vector2(520, 535)

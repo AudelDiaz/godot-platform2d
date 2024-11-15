@@ -1,0 +1,24 @@
+[gd_resource type="AudioStreamInteractive" load_steps=3 format=3 uid="uid://cwdykmg0oxhwe"]
+
+[ext_resource type="AudioStream" uid="uid://bk7k4g46ss66w" path="res://Assets/music/time_for_adventure.mp3" id="1_sll8w"]
+[ext_resource type="AudioStream" uid="uid://cuo7463wu6xjc" path="res://Assets/music/summer_nights.ogg" id="2_y3utx"]
+
+[resource]
+initial_clip = 1
+clip_count = 2
+clip_0/name = &"T02"
+clip_0/stream = ExtResource("2_y3utx")
+clip_0/auto_advance = 1
+clip_0/next_clip = 1
+clip_1/name = &"T01"
+clip_1/stream = ExtResource("1_sll8w")
+clip_1/auto_advance = 1
+clip_1/next_clip = 0
+_transitions = {
+Vector2i(-1, 1): {
+"fade_beats": 2,
+"fade_mode": 1,
+"from_time": 0,
+"to_time": 0
+}
+}

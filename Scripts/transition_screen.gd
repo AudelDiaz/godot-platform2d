@@ -15,8 +15,8 @@ func _ready() -> void:
 	
 func _on_animation_finished(anim_name):
 	if anim_name == "fade_to_black":
-		on_transition_finished.emit()
 		animation_player.play("fade_to_normal")
+		on_transition_finished.emit()
 	elif  anim_name == "fade_to_normal":
 		color_rect.visible = false
 		level_title.visible = false
@@ -27,3 +27,12 @@ func  transition(level_name: String):
 	color_rect.visible = true
 	level_title.visible = true
 	animation_player.play("fade_to_black")
+	
+	
+func load_scene(scene_path: String, title: String = ""):
+	if ResourceLoader.exists(scene_path):
+			TransitionScreen.transition(title)
+			await TransitionScreen.on_transition_finished
+			get_tree().change_scene_to_file(scene_path)
+	else:
+		print("Level file not found.")
