@@ -4,7 +4,6 @@
 [ext_resource type="AudioStream" uid="uid://cuo7463wu6xjc" path="res://Assets/music/summer_nights.ogg" id="2_y3utx"]
 
 [resource]
-initial_clip = 1
 clip_count = 2
 clip_0/name = &"T02"
 clip_0/stream = ExtResource("2_y3utx")
